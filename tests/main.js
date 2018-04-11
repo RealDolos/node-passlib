@@ -65,5 +65,17 @@ describe("passlib", function() {
     it("missing param verify 3", function() {
       return passlib.verify(b64, "pw").should.be.rejectedWith(Error);
     });
+    it("v1, low iter", async function() {
+      this.slow(1000);
+      const rv = Buffer.from(await passlib.create("pw", 1), "base64");
+      rv.writeUInt32BE(1000, 2);
+      return passlib.verify(rv, "pw").should.be.rejectedWith(Error);
+    });
+    it("v1, high iter", async function() {
+      this.slow(1000);
+      const rv = Buffer.from(await passlib.create("pw", 1), "base64");
+      rv.writeUInt32BE(Math.pow(2, 32) - 1, 2);
+      return passlib.verify(rv, "pw").should.be.rejectedWith(Error);
+    });
   });
 });
