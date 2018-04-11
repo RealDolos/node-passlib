@@ -36,7 +36,7 @@ This algorithm derives a key `k` using
 `crypto.pbkdf2(password, salt, iterations, salt, 64, "sha512")`
 where `salt` is a per-call generated crypto-random buffer of 32-bytes, and
 `ìterations` is a value of minimum 20000 but adjusted to take approximately at
-least 100 milliseconds on the current computer.
+least 100 milliseconds on the runtime computer.
 
 A `check = SHA224(VERSION(1) | iterations | salt)` is computed, acting as a
 checksum around the parameters.
@@ -46,7 +46,7 @@ Finally, using `mac = HMAC-SHA512(k, VERSION(1) | iterations | salt | check)`
 `VERSION(1) | iterations | salt | check | mac` is returned, acting as the
 wrapped password value that can be securely stored.
 
-This construction is analog to what scrypt (and node-script) are using, except
+This construction is analog to what scrypt (and node-scrypt) are using, except
 for the different KDF of course.
 Using PBKDF2 has the drawback that it is better "crackable" than e.g. scrypt.
 The decision to use it instead of scrypt in this version stemas from PBKDF2
