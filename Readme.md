@@ -2,6 +2,8 @@
 
 Storing passwords securely, simplified
 
+[![Build Status](https://travis-ci.org/RealDolos/node-passlib.svg?branch=master)](https://travis-ci.org/RealDolos/node-passlib)
+
 ## Usage
 
 ```js
