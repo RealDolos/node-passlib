@@ -9,6 +9,8 @@
     "password",
     "password-hashing"
   ],
+  "homepage": "https://github.com/RealDolos/node-passlib#readme",
+  "repository": "https://github.com/RealDolos/node-passlib",
   "author": "RealDolos <dolos@cock.li>",
   "license": "MIT",
   "scripts": {
