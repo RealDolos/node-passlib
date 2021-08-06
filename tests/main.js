@@ -34,6 +34,7 @@ describe("passlib", function() {
   describe("basic", function() {
     it("has CURRENT_VERSION", function() {
       passlib.should.have.property("CURRENT_VERSION").which.is.a.Number();
+      passlib.should.have.property("CURRENT_VERSION").which.is.exactly(2);
     });
     for (let version = 0; version <= passlib.CURRENT_VERSION; ++version) {
       basic(version);

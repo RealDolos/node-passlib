@@ -45,6 +45,10 @@ Do not mess with the wrapped values, ever. Just consider them opaque.
 
 ## Algorithms
 
+### v2 (current)
+
+This algorithm just uses [`argon2`](https://en.wikipedia.org/wiki/Argon2) (via [`node-argon2`](https://github.com/ranisalt/node-argon2)), type `argoon2id` in version 1.3, with a memory cost of 20 MiB and a time cost of 5.
+
 ### v1
 
 This algorithm derives a key `k` using
