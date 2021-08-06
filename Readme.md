@@ -1,5 +1,7 @@
 # passlib
 
+[![CI](https://github.com/RealDolos/node-passlib/actions/workflows/ci.yml/badge.svg)](https://github.com/RealDolos/node-passlib/actions/workflows/ci.yml)
+
 Storing passwords securely, simplified
 
 ## Usage
