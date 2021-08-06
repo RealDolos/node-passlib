@@ -13,6 +13,15 @@ function createAndVerify(version, desc, str) {
     const nu = isFinite(version) ? version !== passlib.CURRENT_VERSION : false;
     should(passlib.needsUpgrade(res)).be.a.Boolean().which.is.exactly(nu);
   });
+  it(`create and verify asBuffer (${desc}) v${isFinite(version) ? version : "current"}`, async function() {
+    this.slow(900);
+    const res = await passlib.create(str, {version, asBuffer: true});
+    should(res).be.instanceof(Buffer);
+    const same = await passlib.verify(res, str);
+    should(same).be.a.Boolean().which.is.true();
+    const nu = isFinite(version) ? version !== passlib.CURRENT_VERSION : false;
+    should(passlib.needsUpgrade(res)).be.a.Boolean().which.is.exactly(nu);
+  });
   it(`create and not verify (${desc}) v${isFinite(version) ? version : "current"}`, async function() {
     this.slow(2000);
     const res = await passlib.create(str, version);
