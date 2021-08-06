@@ -1,6 +1,6 @@
 {
   "name": "passlib",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "Your friendly password storage and verification library",
   "main": "index.js",
   "keywords": [
